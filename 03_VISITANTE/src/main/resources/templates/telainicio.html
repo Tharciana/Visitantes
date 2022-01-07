@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+	<meta charset="UTF-8">
+	<title>Início</title>
+	
+	<meta http-equiv="X-UA-Compatible" content= "IE-edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	
+	    <!-- Bootstrap CSS -->
+    	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" 
+    	integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" 
+    	crossorigin="anonymous">
+    	
+    	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" 
+    	integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" 
+    	crossorigin="anonymous"></script>
+    	
+    	<style>
+    	* {
+    		margin:0;
+    		padding:0;
+    	}
+    	
+    	
+    	
+    	.container {
+    		display :flex;
+    		justify-content: center;
+    		width: 100%;
+    		margin-top: 100px;
+    	
+    	}
+    	
+    	.card {
+    		background-color: #ffffff98;
+    		padding: 30px;
+    		border-radius: 4%;
+    		box-shadow: 3px 3px 1px
+    	}
+    	
+    	h1 {
+    		text-align: center;
+    		margin-bottom: 20px;
+    	}
+    	
+    	.label-float input {
+    		width: 100%;
+    		padding: 5px 5px;
+    		display: inline-block;
+    		border: 0;
+    		border-bottom: 2px solid;
+    		background-color: transparent;
+    		outline: none;
+    		min-width: 180px;
+    		font-size: 16px;
+    		transition: all .3s ease-out;
+    		border-radius: 0;
+    	}
+    	
+    	.label-float {
+    		position: relative;
+    		padding-top: 13px;
+    		margin-top: 5%;
+    		margin-bottom: 5%;
+    	}
+    	
+    	.label-float input:focus {
+    		border-bottom: 2px solid;
+    	}
+    	
+    	.label-float label {
+    		color: black;
+	    	pointer-event: none;
+	    	position: absolute;
+	    	top: 0;
+	    	left: 0;
+	    	margin-top: 13px;
+	    	transition: all .3s ease-out;
+    	}
+    	
+    	.label-float input:focus + label {
+    		font-size: 13px;
+    		margin-top: 0;
+    	}
+    	
+    	button {
+    		background-color: transparent;
+    		border-color: black;
+    		padding: 7px;
+    		font-weight: bold;
+    		font-size: 12pt;
+    		margin-top: 20px;
+    		border-radius: 4px;
+    		cursor: pointer;
+    		outline: none;
+    		transition: all .4s ease-out;
+    		}
+    		
+    	button:hover {
+    		color:#fff;
+    	}
+    	
+    	.justify-center {
+    		display:flex;
+    		justify-content: center;
+    	}
+    	
+    	hr {
+    		margin-top: 10%;
+    		margin-bottom: 10%;
+    		width: 60%;
+    	}
+    	
+    	p {
+    		font-size: 14pt;
+    		text-align: center;
+    		
+    	}
+    	
+    	a {
+    		font-weight: bold;
+    		text-decoration:none;
+    		transition: all .3s ease-out;
+    		color: black;
+    	 }
+    	 
+    	 a:hover {
+    	 color: #fff;
+    	 }
+    	 body {
+    	 	background-image: url(/imagens/fundo.jpg);
+    	 	background-repeat: no-repeat;
+    	 	background-size: cover;
+    	 	background-attachment: fixed;
+    	 	Background-position: center center;
+    	 }
+    	 
+    	</style>
+    	
+</head>
+<body>
+	<form method="post" th:action="@{/login}">
+	
+		<div class = "container">
+			<div class = "card">
+				<h1>Entrar no sistema</h1>
+				
+				<div th:if = "${msgSucesso} != null">
+					<b th:text = "${msgSucesso}" style = "color: green;"></b>
+					<br/><br/>	
+				</div>
+				
+				<div th:if = "${msgErro} != null">
+					<b th:text = "${msgErro}" style = "color:red;"></b>
+					<br/><br/>	
+				</div>
+								
+				<div class = "label-float">
+					<input type = "email" id = "usuario" name="username" required autofocus/>
+					<label>Email</label>
+				</div>
+				
+				<div class = "label-float">
+					<input type = "password" id = "senha" name="password" required/>
+					<label for = "usuario">Senha</label>
+				</div>
+				
+				<div class="form-check form-check-inline">
+				  <input class="form-check-input" type="checkbox" name="remember-me" id="inlineRadio1">
+				  <label class="form-check-label" for="inlineRadio1">Lembrar-me</label>
+				</div>
+				
+				<div class = "justify-center">
+					<button type="submit">Entrar</button>
+				</div>
+				
+				<div class = "justify-center">
+					<hr></hr>
+				</div>
+				
+				<p>É novo?
+					<a href = "/funcionarios/cadastroFunc"> Cadastre-se </a>
+				</p>
+			
+			</div>
+		
+		</div>
+	
+	</form>
+	
+	
+	
+</body>
+</html>

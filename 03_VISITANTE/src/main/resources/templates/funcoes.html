@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt"
+	layout:decorate="~{layout}">
+<head>
+<meta charset="UTF-8">
+<title>Funções do Sistema</title>
+
+	<meta http-equiv="X-UA-Compatible" content= "IE-edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	
+	    <!-- Bootstrap CSS -->
+    	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" 
+    	integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" 
+    	crossorigin="anonymous">
+    	
+    	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" 
+    	integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" 
+    	crossorigin="anonymous"></script>
+    	
+    	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    	
+    	<style>
+    	
+    	body {
+    	background-image: url(/imagens/branco.jpg);
+       	}
+        
+        .links{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+     
+        a{
+            text-decoration: none;
+            margin: 20px;   
+        }
+        
+        .botao{
+            width: 120px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.25);
+            text-align: center;
+            color: white;
+            background-color:#fff;
+    		border-radius: 4%;
+        }
+        
+        .botao h4{
+            color: #b2bec3;
+        }
+        
+        .icon-botao{
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background-color: #8F8F8F;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin:10px ;
+        }
+        
+        .icon-botao i{
+            font-size: 35px;
+            
+        }
+    </style>
+</head>
+<body>
+
+	<section layout:fragment="corpo">
+	
+    <div class="links">
+    <a class="link-botao" href="/usuarios/cadastro">
+    <div class="botao">
+        <div class="icon-botao">
+            <i class="bi bi-person-plus-fill"></i>
+        </div>
+        <h4>
+            Cadastro de Visitantes
+        </h4>
+    </div>
+    </a>
+    <a class="link-botao" href="/usuarios/busca">
+        <div class="botao">
+            <div class="icon-botao">
+                <i class="bi bi-search"></i>
+            </div>
+            <h4>
+                Busca de Visitantes
+            </h4>
+        </div>
+        </a>
+        <a class="link-botao" href="/visita/cadastroV">
+            <div class="botao">
+                <div class="icon-botao">
+                    <i class="bi bi-person-plus-fill"></i>
+                </div>
+                <h4>
+                    Cadastro de Visita
+                </h4>
+            </div>
+            </a>
+            <a class="link-botao" href="/visita/buscarV">
+                <div class="botao">
+                    <div class="icon-botao">
+                        <i class="bi bi-search"></i>
+                    </div>
+                    <h4>
+                        Busca de Visita
+                    </h4>
+                </div>
+                </a>
+            </div>
+     </section>
+
+</body>
+</html>
